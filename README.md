@@ -34,6 +34,10 @@ If you prefer not to use Docker:
 2. Clone this repository to your web server's document root
 3. Access the application via your local web server
 
+### Wireframe
+![wireframe](wireframe.jpg "how it might look")
+
+
 ### Project Structure
 ```
 .
