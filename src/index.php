@@ -1,33 +1,5 @@
-<?php
-session_start();
-
-// Read numbers from input.txt
-$numbers = file(__DIR__ . "/../data/input.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-$numbers = array_map('intval', $numbers);
-
-// Sort numbers
-sort($numbers);
-
-// Get the highest number
-$maxNumber = end($numbers);
-
-// Handle increase/decrease
-if (isset($_POST['action'])) {
-    $currentValue = intval($_POST['max_value']);
-
-    if ($_POST['action'] == 'increase') {
-        $currentValue += 5;
-    } elseif ($_POST['action'] == 'decrease') {
-        $currentValue = max(0, $currentValue - 5);
-    }
-
-    $maxNumber = $currentValue; // Update max number
-}
-
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,6 +7,7 @@ if (isset($_POST['action'])) {
     <style>
         ul {
             list-style: none;
+        }
         li {
             padding: 5px;
             font-size: 18px;
